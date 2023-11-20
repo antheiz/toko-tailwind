@@ -1,0 +1,80 @@
+<div x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
+    aria-modal="true">
+    <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
+        <div x-cloak @click="modelOpen = false" x-show="modelOpen"
+            x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200 transform"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+            class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-40" aria-hidden="true"></div>
+
+        <div x-cloak x-show="modelOpen" x-transition:enter="transition ease-out duration-300 transform"
+            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+            x-transition:leave="transition ease-in duration-200 transform"
+            x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            class="inline-block w-full max-w-md p-8 my-20 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl">
+            <!-- Modal header -->
+            <div class="flex items-start justify-between pb-4 border-b rounded-t">
+                <h3 class="text-xl font-semibold text-gray-800 ">
+                    Filter Produk
+                </h3>
+                <button type="button" @click="modelOpen = false"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center "
+                    data-modal-hide="default-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <form method="get">
+                <div class="py-6 space-y-6">
+                    <!-- TODO: Do after all process mvp done -->
+                    <!-- <div>
+                        <label for="user name" class="block text-sm text-gray-700 capitalize pb-2">Urutkan</label>
+                        <select name="sort"
+                            class="py-3 px-4 pr-9 block w-full text-gray-600 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500">
+                            <option>Most Popular</option>
+                            <option>Best ratings</option>
+                            <option>Newest</option>
+                        </select>
+                    </div> -->
+
+                    <div>
+                        <label for="user name" class="block text-sm text-gray-700 capitalize pb-2">Kategori</label>
+                        <select name="category"
+                            class="py-3 px-4 pr-9 block w-full text-gray-600 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500">
+                            
+                            <option value="elektronik">Elektronik</option>
+                            <!-- <option>Elektronik</option>
+                            <option>Pakaian Pria</option>
+                            <option>Pakaian Wanita</option> -->
+                        </select>
+                    </div>
+
+                    <!-- TODO: Do after all process mvp done -->
+                    <!-- <div>
+                        <label for="user name" class="block text-sm text-gray-700 capitalize pb-2">Harga</label>
+                        <select name="price"
+                            class="py-3 px-4 pr-9 block w-full text-gray-600 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500">
+                            <option>Rp1.0jt - Rp3.0jt</option>
+                            <option>Rp3.0jt - Rp5.0jt</option>
+                            <option>Rp5.0jt - Rp7.0jt</option>
+                        </select>
+                    </div> -->
+                </div>
+                <!-- Modal footer -->
+                <div class="flex justify-end mt-4">
+                    <button type="submit"
+                        class="px-3 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-500 focus:ring focus:ring-indigo-300 focus:ring-opacity-50">
+                        Terapkan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

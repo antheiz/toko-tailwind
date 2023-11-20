@@ -1,0 +1,164 @@
+---
+import ModalFilter from "../components/ModalFilter.astro";
+import ProductCard from "../components/ProductCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Beranda • Toko Online">
+    <main class="bg-gray-100">
+        <div class="flex max-w-screen-xl mx-auto py-8 gap-3 items-center px-4 xl:px-0">
+            <ol class="flex items-center whitespace-nowrap min-w-0" aria-label="Breadcrumb">
+                <li class="text-sm">
+                    <a class="flex items-center text-gray-500 hover:text-blue-600" href="/">
+                        Beranda
+                        <svg class="flex-shrink-0 mx-3 overflow-visible h-2.5 w-2.5 text-gray-400" width="16" height="16"
+                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="text-sm">
+                    <a class="flex items-center text-gray-500 hover:text-blue-600" href="/cart">
+                        Keranjang
+                        <svg class="mx-3 h-2.5 w-2.5 flex-shrink-0 overflow-visible text-gray-400" width="16" height="16"
+                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="text-sm font-semibold text-gray-800 truncate " aria-current="page">
+                    Checkout
+                </li>
+            </ol>
+        </div>
+        <div class="max-w-screen-xl mx-auto lg:grid grid-cols-12 gap-6 items-start pb-16 pt-4 px-4 xl:px-0">
+            <div class="lg:col-span-8 bg-white border border-gray-200 px-8 py-4 rounded">
+                <div class="flex flex-col gap-8 py-6">
+                    <div>
+                        <h3 class="text-lg font-medium capitalize mb-4">
+                            Alamat Penagihan
+                        </h3>
+                        <div class="group flex flex-col relative h-full border-y border-gray-200 py-5">
+                            <div class="flex gap-2">
+                                <h3 class="text-base font-semibold text-gray-800">
+                                    Theis Andatu
+                                </h3>
+                                <span class="text-sm text-gray-500">
+                                    (Asrama)
+                                </span>
+                                <span class=" px-2 py-1 text-xs font-medium rounded text-white bg-blue-400">
+                                    Utama
+                                </span>
+                            </div>
+                            <p class="my-3 text-sm text-gray-600">
+                                085231370385
+                            </p>
+                            <p class="text-sm text-gray-600">
+                                Asrama Mahasiswa ITS, Blok H, Surabaya, Jawa Timur. 60111
+                            </p>
+                            <a href="{% url 'users:addresses' %}"
+                                class="absolute flex top-0 right-0 px-2 py-2 mt-2 mr-2 text-xs font-medium rounded border text-gray-500">
+                                <span>Pilih Alamat Lain</span>
+        
+                                <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-4 h-4" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6l-6 6l-1.41-1.41z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-[120px_1fr] border border-gray-200 rounded-lg p-2 my-4">
+                            <img class="object-cover w-[8rem] h-[8rem] rounded-t-lg md:rounded-none md:rounded-s-lg"
+                                src="/assets/product-default.jpg" alt="">
+                            <div class="flex flex-col px-4 leading-normal">
+                                <div class="flex items-center gap-3">
+                                    <h1 class="text-xl font-bold text-gray-800 ">
+                                        Produk 1
+                                    </h1>
+                                    <span class="text-sm font-medium text-blue-400">
+                                        1 barang
+                                    </span>
+                                </div>
+        
+                                <p class="mt-2 text-sm text-gray-600 max-w-md">Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit In odit</p>
+        
+                                <div class="flex flex-col justify-between mt-3 item-center">
+                                    <p class="text-lg font-semibold text-blue-500 ">
+                                        Rp100.000
+                                    </p>
+                                    <span class="text-xs text-gray-500 line-through ">
+                                        Rp200.000
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TODO: Custom Metode Pembayaran -->
+                <!-- <div class="flex flex-col gap-8 py-6">
+                    <div>
+                        <h3 class="text-lg font-medium capitalize mb-4">
+                            Metode Pembayaran
+                        </h3>
+                        <div class="group flex flex-col relative h-full border-y border-gray-200 py-5">
+                            <div class="mt-5 grid gap-6">
+                                <div class="relative">
+                                    <input class="peer hidden" id="radio_1" type="radio" name="radio" checked />
+                                    <span
+                                        class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+                                    <label
+                                        class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
+                                        for="radio_1">
+                                        <img class="w-14 object-contain" src="/images/naorrAeygcJzX0SyNI4Y0.png" alt="" />
+                                        <div class="ml-5">
+                                            <span class="mt-2 font-semibold">Transfer Bank</span>
+                                            <p class="text-slate-500 text-sm leading-6">Delivery: 2-4 Days</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="relative">
+                                    <input class="peer hidden" id="radio_2" type="radio" name="radio" checked />
+                                    <span
+                                        class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+                                    <label
+                                        class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
+                                        for="radio_2">
+                                        <img class="w-14 object-contain" src="/images/oG8xsl3xsOkwkMsrLGKM4.png" alt="" />
+                                        <div class="ml-5">
+                                            <span class="mt-2 font-semibold">Kartu Kredit</span>
+                                            <p class="text-slate-500 text-sm leading-6">Delivery: 2-4 Days</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        
+            <!-- TODO: Update setiap jumlah harga -->
+            <div class="lg:col-span-4 bg-white border border-gray-200 p-6 rounded mt-6 lg:mt-0">
+                <h4 class="text-gray-800 text-lg mb-4 font-medium">Ringkasan Belanja</h4>
+                <div class="flex justify-between border-b border-gray-200 mt-1">
+                    <h4 class="text-gray-800 text-sm my-3 ">Total Harga (1 Produk)</h4>
+                    <h4 class="text-gray-800 text-sm my-3 ">Rp100.000</h4>
+                </div>
+                <div class="flex justify-between border-b border-gray-200 mt-1">
+                    <h4 class="text-gray-800 text-sm my-3 ">Total Diskon Barang</h4>
+                    <h4 class="text-gray-800 text-sm my-3 ">-Rp100.000</h4>
+                </div>
+                <div class="flex justify-between">
+                    <h4 class="text-gray-800 font-semibold my-3 ">Total Belanja</h4>
+                    <h4 class="text-gray-800 font-semibold my-3 ">
+                        Rp100.000
+                    </h4>
+                </div>
+                <a href="/order-complete" id='pay-button' class="bg-blue-400 border border-blue-400 text-white px-4 py-3 font-medium rounded-md uppercase hover:bg-transparent
+                     hover:text-blue-400 transition text-sm w-full block text-center mt-4">
+                    Pilih Pembayaran
+                </a>
+            </div>
+        </div>
+    </main>
+</Layout>

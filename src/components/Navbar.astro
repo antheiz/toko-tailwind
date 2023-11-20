@@ -1,0 +1,91 @@
+<nav x-data="{ isOpen: false }" class="border-b bg-white">
+    <div class="mx-auto max-w-screen-xl px-4 py-4 sm:px-6 xl:px-0">
+        <div class="lg:flex lg:items-center">
+            <div class="flex items-center justify-between">
+                <a href="/" class="">
+                    <h1 class="text-blue-500 text-xl font-semibold uppercase">Toko Online</h1>
+                </a>
+
+                <!-- Mobile menu button -->
+                <div class="flex lg:hidden">
+                    <button x-cloak @click="isOpen = !isOpen" type="button"
+                        class="text-gray-500 hover:text-gray-600 focus:text-gray-600 focus:outline-none dark:text-gray-200 dark:hover:text-gray-400 dark:focus:text-gray-400"
+                        aria-label="toggle menu">
+                        <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                        </svg>
+
+                        <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+                class="absolute inset-x-0 z-20 w-full flex-1 bg-white px-6 py-4 transition-all duration-300 ease-in-out dark:bg-gray-800 lg:relative lg:top-0 lg:mt-0 lg:flex lg:w-auto lg:translate-x-0 lg:items-center lg:justify-between lg:bg-transparent lg:p-0 lg:opacity-100">
+                <div
+                    class="flex flex-col gap-y-3 capitalize text-gray-600 lg:-mx-4 lg:flex lg:flex-row lg:items-center lg:px-8">
+                    <div class="relative mt-2 flex md:mt-0 lg:ml-8">
+                        <form action="#" method="get">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                <svg class="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+
+                            <input type="text" name="search_query" value="nama, kategori"
+                                class="focus:border-blue-400 focus:ring-blue-300 w-full rounded-md border border-gray-300 py-2 pl-10 pr-4 text-sm italic"
+                                placeholder="nama, kategori..." />
+                        </form>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-center gap-8 lg:mt-0 lg:flex">
+                    <a href="/cart" id="menu-cart-badge"
+                    class="hover:text-blue-400 relative mt-2 text-gray-600 transition">
+                    <span id="menu-cart-badge"
+                        class="bg-blue-400 absolute -right-3 -top-1 flex h-5 w-5 items-center justify-center rounded-full text-xs text-white">
+                        3
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16">
+                        <path fill="currentColor"
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2a1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2a1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0z" />
+                    </svg>
+                </a>
+                    <a href="/account/notification"
+                        class="hover:text-blue-400 relative mt-2 text-gray-600 transition">
+                        <span
+                            class="bg-blue-400 absolute -right-3 -top-1 flex h-5 w-5 items-center justify-center rounded-full text-xs text-white">3</span>
+
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                        </svg>
+                    </a>
+                    <div class="border-l border-gray-200 pl-4">
+                        <a href="/account/profile">
+                            <img class="h-10 w-10 rounded-full border border-gray-300 p-1 ring-2 ring-gray-300"
+                                src="../assets/user-default.jpg" alt="Profile photo" />
+                        </a>
+                    </div>
+                    <a href="/auth/login"
+                        class="focus:ring-blue-600 inline-flex items-center justify-center gap-3 rounded-md border border-gray-200 bg-white px-4 py-2 align-middle text-sm font-medium text-gray-700 transition-all hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white">
+                        Masuk
+                        <svg class="h-auto w-2.5" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1 7C0.447715 7 -3.73832e-07 7.44771 -3.49691e-07 8C-3.2555e-07 8.55228 0.447715 9 1 9L13.0858 9L7.79289 14.2929C7.40237 14.6834 7.40237 15.3166 7.79289 15.7071C8.18342 16.0976 8.81658 16.0976 9.20711 15.7071L16.0303 8.88388C16.5185 8.39573 16.5185 7.60427 16.0303 7.11612L9.20711 0.292893C8.81658 -0.0976318 8.18342 -0.0976318 7.79289 0.292893C7.40237 0.683417 7.40237 1.31658 7.79289 1.70711L13.0858 7L1 7Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

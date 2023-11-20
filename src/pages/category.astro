@@ -1,0 +1,101 @@
+---
+import ModalFilter from "../components/ModalFilter.astro";
+import ProductCard from "../components/ProductCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Beranda • Toko Online">
+    <main class="bg-gray-100">
+        <div
+            class="mx-auto flex max-w-screen-xl items-center gap-3 px-4 py-8 xl:px-0"
+        >
+            <ol
+                class="flex min-w-0 items-center whitespace-nowrap"
+                aria-label="Breadcrumb"
+            >
+                <li class="text-sm">
+                    <a
+                        class="flex items-center text-gray-500 hover:text-blue-600"
+                        href="/"
+                    >
+                        Beranda
+                        <svg
+                            class="mx-3 h-2.5 w-2.5 flex-shrink-0 overflow-visible text-gray-400"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li
+                    class="truncate text-sm font-semibold text-gray-800"
+                    aria-current="page"
+                >
+                    Kategori
+                </li>
+            </ol>
+        </div>
+
+        <!-- Card Section -->
+        <div
+            class="mx-auto flex max-w-screen-xl flex-col px-4 pb-16 pt-4 xl:px-0"
+        >
+            <h2 class="pb-6 text-2xl font-medium uppercase text-gray-800">
+                Kategori Produk
+            </h2>
+            <!-- Grid -->
+            <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-3">
+                <a
+                    class="group flex flex-col rounded-xl border bg-white shadow-sm transition hover:shadow-md"
+                    href="/shop"
+                >
+                    <div class="p-4 md:p-5">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img
+                                    class="h-[2.375rem] w-[2.375rem] rounded-full"
+                                    src="assets/product-default.jpg"
+                                    alt="Image Description"
+                                />
+                                <div class="ml-3">
+                                    <h3
+                                        class="font-semibold text-gray-800 group-hover:text-blue-600"
+                                    >
+                                        Elektronik
+                                    </h3>
+                                    <p class="text-sm text-gray-500">
+                                        1 Produk
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="pl-3">
+                                <svg
+                                    class="h-3.5 w-3.5 text-gray-500"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- End Grid -->
+        </div>
+    </main>
+</Layout>

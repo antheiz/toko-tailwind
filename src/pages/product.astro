@@ -1,0 +1,264 @@
+---
+import ProductCard from "../components/ProductCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Beranda • Toko Online">
+    <main class="bg-gray-100">
+        <div
+            class="mx-auto flex max-w-screen-xl items-center gap-3 px-4 py-8 xl:px-0"
+        >
+            <ol
+                class="flex min-w-0 items-center whitespace-nowrap"
+                aria-label="Breadcrumb"
+            >
+                <li class="text-sm">
+                    <a
+                        class="flex items-center text-gray-500 hover:text-blue-600"
+                        href="/"
+                    >
+                        Beranda
+                        <svg
+                            class="mx-3 h-2.5 w-2.5 flex-shrink-0 overflow-visible text-gray-400"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li class="text-sm">
+                    <a
+                        class="flex items-center text-gray-500 hover:text-blue-600"
+                        href="/shop"
+                    >
+                        Elektronik
+                        <svg
+                            class="mx-3 h-2.5 w-2.5 flex-shrink-0 overflow-visible text-gray-400"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li
+                    class="truncate text-sm font-semibold text-gray-800"
+                    aria-current="page"
+                >
+                    Produk 1
+                </li>
+            </ol>
+        </div>
+
+        <div class="mx-auto max-w-screen-xl py-4">
+            <div class="bg-white rounded px-4 lg:px-8 py-16 flex flex-wrap">
+                <div
+                    class="w-full px-4 md:w-1/2 border rounded border-gray-200"
+                >
+                    <div class="relative mb-6 lg:my-10 h-[22rem] lg:h-[32rem]">
+                        <img
+                            src="assets/product-default.jpg"
+                            alt=""
+                            class="h-full w-full object-contain"
+                        />
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="pt-8 lg:pt-0 lg:pl-16">
+                        <div class="mb-8 border-b border-gray-200 pb-6">
+                            <div class="text-lg font-medium text-rose-500">
+                                Flash Sale -
+                                <span class="font-semibold">50%</span>
+                            </div>
+                            <h2
+                                class="mb-6 mt-2 max-w-xl text-xl font-bold md:text-4xl"
+                            >
+                                Produk 1
+                            </h2>
+                            <div class="mb-6 flex flex-wrap items-center">
+                                <ul class="mb-4 mr-2 flex lg:mb-0">
+                                    <li>
+                                        <a href="#">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="bi bi-star mr-1 w-4 text-blue-500"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="bi bi-star mr-1 w-4 text-blue-500"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="bi bi-star mr-1 w-4 text-blue-500"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="bi bi-star mr-1 w-4 text-blue-500"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <p class="text-xs">(2 customer reviews)</p>
+                            </div>
+                            <p class="mb-8 max-w-md text-gray-700">
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Sed, esse soluta
+                                exercitationem porro ad, excepturi aliquid
+                                mollitia doloribus labore quidem error
+                                asperiores nesciunt tempora nemo optio, ut ex
+                                ullam fuga?
+                            </p>
+                            <div
+                                class="mb-8 rounded border border-gray-300 p-4"
+                            >
+                                <h2 class="mb-4 text-xl font-semibold">
+                                    Real time <span
+                                        class="bg-blue-500 px-2 text-gray-50"
+                                        >26</span
+                                    > visitors right now!
+                                </h2>
+                                <div
+                                    class="mb-1 text-xs font-medium text-gray-700"
+                                >
+                                    Hurry up! left 23 in Stock
+                                </div>
+                                <div
+                                    class="h-2.5 w-full rounded-full bg-gray-200"
+                                >
+                                    <div
+                                        class="h-2.5 rounded-full bg-blue-600 dark:bg-blue-400"
+                                        style="width:45%;"
+                                    >
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="inline-block text-2xl font-semibold text-gray-700"
+                            >
+                                <span class="text-lg font-bold text-gray-700">
+                                    Rp50.000
+                                </span>
+                                <span
+                                    class="text-sm text-gray-400 line-through"
+                                >
+                                    Rp100.000
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap items-center">
+                            <div class="mb-4 mr-4 lg:mb-0">
+                                <div class="w-28">
+                                    <div
+                                        class="flex w-max divide-x divide-gray-300 border rounded border-gray-300 text-gray-600"
+                                    >
+                                        <button
+                                            id="decrementQty"
+                                            class="h-10 w-10 cursor-pointer rounded-l border-r text-gray-600 outline-none hover:bg-gray-100 hover:text-gray-700"
+                                        >
+                                            <span
+                                                class="m-auto text-2xl"
+                                                >-</span
+                                            >
+                                        </button>
+                                        <span
+                                            id="valueQty"
+                                            class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-l border-r text-gray-600 outline-none hover:bg-gray-100 hover:text-gray-700"
+                                        >
+                                            1</span
+                                        >
+                                        <button
+                                            id="incrementQty"
+                                            class="h-10 w-10 cursor-pointer rounded-r border-l text-gray-600 outline-none hover:bg-gray-100 hover:text-gray-700"
+                                        >
+                                            <span
+                                                class="m-auto text-2xl"
+                                                >+</span
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <a href="#"
+                                    class="mr-4 h-10 w-full bg-blue-500 px-4 py-3 rounded text-gray-50 hover:bg-blue-600 cursor-pointer">
+                                    Tambah ke Keranjang
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mx-auto flex max-w-screen-xl flex-col px-4 py-16 xl:px-0">
+            <h2 class="pb-6 text-2xl font-medium uppercase text-gray-800">
+                Produk terkait
+            </h2>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <ProductCard />
+            </div>
+        </div>
+    </main>
+</Layout>

@@ -1,0 +1,241 @@
+---
+import ModalFilter from "../components/ModalFilter.astro";
+import ProductCard from "../components/ProductCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Beranda • Toko Online">
+    <main class="bg-gray-100">
+        <div
+            class="flex max-w-screen-xl mx-auto py-8 gap-3 items-center px-4 xl:px-0"
+        >
+            <ol
+                class="flex items-center whitespace-nowrap min-w-0"
+                aria-label="Breadcrumb"
+            >
+                <li class="text-sm">
+                    <a
+                        class="flex items-center text-gray-500 hover:text-blue-600"
+                        href="/"
+                    >
+                        Beranda
+                        <svg
+                            class="flex-shrink-0 mx-3 overflow-visible h-2.5 w-2.5 text-gray-400"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li
+                    class="text-sm font-semibold text-gray-800 truncate"
+                    aria-current="page"
+                >
+                    Keranjang
+                </li>
+            </ol>
+        </div>
+        <div class="px-4 py-6 mx-auto max-w-screen-xl lg:pb-16 md:px-6">
+            <div>
+                <div class="p-6 bg-white">
+                    <div
+                        class="flex-wrap items-center hidden mb-6 -mx-4 md:flex md:mb-8"
+                    >
+                        <div
+                            class="w-full px-4 mb-6 md:w-4/6 lg:w-6/12 md:mb-0"
+                        >
+                            <h2 class="font-semibold text-gray-500">
+                                Nama Produk
+                            </h2>
+                        </div>
+                        <div class="hidden px-4 lg:block lg:w-2/12">
+                            <h2 class="font-semibold text-gray-500">Harga</h2>
+                        </div>
+                        <div class="w-auto px-4 md:w-1/6 lg:w-2/12">
+                            <h2 class="font-semibold text-gray-500">
+                                Kuantitas
+                            </h2>
+                        </div>
+                        <div class="w-auto px-4 text-right md:w-1/6 lg:w-2/12">
+                            <h2 class="font-semibold text-gray-500">
+                                Subtotal
+                            </h2>
+                        </div>
+                    </div>
+                    <div
+                        id="cart-items-all"
+                        class="py-4 px-4 mb-8 border-t border-gray-200"
+                    >
+                        <div
+                            class="flex flex-wrap items-center border-b border-gray-200 mb-6 -mx-4 md:mb-8"
+                            id="cart-item-"
+                        >
+                            <div
+                                class="w-full px-4 mb-6 md:w-4/6 lg:w-6/12 md:mb-0"
+                            >
+                                <div class="flex flex-wrap items-center -mx-4">
+                                    <div class="w-full px-4 mb-3 md:w-1/3">
+                                        <div
+                                            class="w-full h-96 md:h-24 md:w-24"
+                                        >
+                                            <img
+                                                src="/assets/product-default.jpg"
+                                                alt=""
+                                                class="object-cover w-full h-full"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="w-2/3 px-4">
+                                        <a
+                                            href="/product"
+                                            class="mb-2 text-xl font-semibold hover:underline"
+                                            >Produk 1</a
+                                        >
+                                        <p class="text-gray-500">Elektronik</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden px-4 lg:block lg:w-2/12">
+                                <p class="text-lg font-semibold text-blue-500">
+                                    Rp100.000
+                                </p>
+                                <span
+                                    class="text-xs text-gray-500 line-through"
+                                >
+                                    Rp200.000
+                                </span>
+                            </div>
+                            <div class="w-auto px-4 md:w-1/6 lg:w-2/12">
+                                <div
+                                    class="inline-flex items-center px-4 font-semibold text-gray-500 border border-gray-200 rounded-md"
+                                >
+                                    <a
+                                        class="py-2 hover:text-gray-700 cursor-pointer"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            fill="currentColor"
+                                            class="bi bi-dash"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                    <span
+                                        class="w-12 px-2 py-2 text-center border-0 rounded-md"
+                                    >
+                                        1
+                                    </span>
+                                    <a
+                                        class="py-2 hover:text-gray-700 cursor-pointer"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            fill="currentColor"
+                                            class="bi bi-plus"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div
+                                class="w-auto px-4 text-right md:w-1/6 lg:w-2/12"
+                            >
+                                <p class="text-lg font-semibold text-blue-500">
+                                    Rp100.000
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <div
+                        class="flex flex-col gap-4 px-10 py-4 bg-white border-t rounded-md"
+                    >
+                        <div class="flex justify-between">
+                            <span class="text-gray-800">
+                                Total Harga (1 barang)
+                            </span>
+                            <span class="font-medium text-gray-500">
+                                Rp100.000
+                            </span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-800">
+                                Total Diskon Barang - 50%
+                            </span>
+                            <span class="font-medium text-gray-500">
+                                -Rp100.000
+                            </span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-base font-medium md:text-xl"
+                                >Total Harga</span
+                            >
+                            <span class="font-semibold text-lg text-blue-500">
+                                Rp100.000
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <a
+                            href="/checkout"
+                            class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded border border-transparent bg-blue-500 text-white hover:bg-blue-600 disabled:opacity-50 disabled:pointer-events-none"
+                        >
+                            Lanjutkan ke Pembayaran
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-8 pb-24">
+                <span class="flex justify-center">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="font-black text-gray-200 h-[6rem]"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            fill="currentColor"
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2a1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2a1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0z"
+                        ></path>
+                    </svg>
+                </span>
+
+                <p
+                    class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                >
+                    Keranjang Belanja
+                </p>
+
+                <p class="mt-4 text-gray-500">
+                    Keranjang anda saat ini kosong.
+                </p>
+
+                <a
+                    href="/shop"
+                    class="inline-block px-5 py-3 mt-6 text-sm font-medium text-white bg-indigo-600 rounded hover:bg-indigo-700 focus:outline-none focus:ring"
+                >
+                    Belanja sekarang
+                </a>
+            </div>
+        </div>
+    </main>
+</Layout>
